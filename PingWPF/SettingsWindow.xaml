@@ -1,0 +1,46 @@
+﻿<Window x:Class="PingWPF.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PingWPF"
+        mc:Ignorable="d"
+        Title="Настройки" Height="550" Width="700" WindowStyle="ThreeDBorderWindow" FontFamily="Times New Roman" FontSize="20" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="0" Header="Заметка" HorizontalAlignment="Stretch" Margin="10,10,10,0" VerticalAlignment="Stretch" BorderThickness="3">
+            <Grid>
+                <TextBlock Text="В результатах пинга отображены параметры ответов на запросы,
+                           которые зависят от сервера, к которому ведётся пинг, и могут отличаться от параметров самих запросов." HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" TextWrapping="Wrap"></TextBlock>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Header="Максимальное время ожидания ответа на запрос ping" HorizontalAlignment="Stretch" Margin="10,10,10,0" VerticalAlignment="Top" BorderThickness="3">
+            <Grid>
+                <TextBox DataObject.Pasting="TextBoxPasting" x:Name="PingTimeout" HorizontalAlignment="Stretch" Margin="10,10,40,10" TextWrapping="Wrap" VerticalAlignment="Top" PreviewTextInput="Preview_TextInput"/>
+                <TextBlock Text="мс" HorizontalAlignment="Right" Margin="10,10,10,10"></TextBlock>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="2" Header="Размер буфера для запроса ping" HorizontalAlignment="Stretch" Margin="10,10,10,0" VerticalAlignment="Top" BorderThickness="3">
+            <Grid>
+                <TextBox DataObject.Pasting="TextBoxPasting" x:Name="PingBuffer" HorizontalAlignment="Stretch" Margin="10,10,60,10" TextWrapping="Wrap" VerticalAlignment="Top" PreviewTextInput="Preview_TextInput"/>
+                <TextBlock Text="байт" HorizontalAlignment="Right" Margin="10,10,10,10"></TextBlock>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="3" Header="Максимальное число узлов маршрутизации для пакета ping (TTL)" HorizontalAlignment="Stretch" Margin="10,10,10,0" VerticalAlignment="Top" BorderThickness="3">
+            <Grid>
+                <TextBox DataObject.Pasting="TextBoxPasting" x:Name="Ttl" HorizontalAlignment="Stretch" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" PreviewTextInput="Preview_TextInput"/>
+                <TextBlock Text="(не более 255)" HorizontalAlignment="Center" Margin="10,40,10,10"></TextBlock>
+            </Grid>
+        </GroupBox>
+        <Grid Grid.Row="4">
+            <Button x:Name="Cancel" Click="Cancel_Click" Content="Отмена" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Bottom" IsCancel="True"/>
+            <Button x:Name="Apply" Click="Apply_Click" Content="Применить" HorizontalAlignment="Right" Margin="10,10,10,10" VerticalAlignment="Bottom" IsDefault="True"/>
+        </Grid>
+    </Grid>
+</Window>

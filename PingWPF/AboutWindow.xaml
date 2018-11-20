@@ -1,0 +1,16 @@
+﻿<Window x:Class="PingWPF.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PingWPF"
+        mc:Ignorable="d"
+        Title="О программе" Height="300" Width="500" WindowStyle="ThreeDBorderWindow" FontFamily="Times New Roman" FontSize="20" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <TextBlock Text="Ping" HorizontalAlignment="Center" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" TextDecorations="Underline"/>
+        <TextBlock Text="Программа для пинга. Если нужно что-то часто пинговать, то программа может оказаться очень даже полезной. Особенно, если это google.com :). " HorizontalAlignment="Stretch" Margin="10,50,10,10" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Text="Автор: Космин Дмитрий" HorizontalAlignment="Stretch" Margin="10,180,10,10" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="Ok" Click="Ok_Click" Content="Ок" HorizontalAlignment="Center" Margin="10,10,10,10" VerticalAlignment="Bottom" Width="75"/>
+
+    </Grid>
+</Window>
